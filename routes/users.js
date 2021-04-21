@@ -76,7 +76,7 @@ router.get('/:username/from', ensureCorrectUser, async (req, res, next)=>{
     try{
     const {username} = req.params;
     const user = await User.messagesFrom(username);
-    return res.json({user});  
+    return res.json({user});
     } catch (e) {
         return next(e);
     };
